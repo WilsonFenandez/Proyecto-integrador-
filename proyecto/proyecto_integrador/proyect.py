@@ -8,3 +8,12 @@ class Proyect:
      self.reductions_emissions=reductions_emissions
      self.energy_regeneration=energy_regeneration
      self.status=status
+
+def get_id(self):
+    return self.__id
+
+def get_location(self):
+    return self.__location
+
+def get_responsible(self):
+    return self.__responsible
