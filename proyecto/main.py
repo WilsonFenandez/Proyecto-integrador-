@@ -30,14 +30,14 @@ def hub():
             energy_regeneration = float(input("Energía generada (en kWh): "))
             status = input("Estado del proyecto (pendiente, en curso, completado): ")
             proyect = Proyect(id, name, type, location, responsible, reductions_emissions, energy_regeneration, status)
-            organization.projects.append(proyect)
+            organization.proyects.append(proyect)
 
             print("Proyecto agregado exitosamente.")
 
         elif option == "2":
 
             id = input("ID del proyecto a mostrar: ")
-            proyect = next((p for p in organization.projects if p.get_id() == id), None)
+            proyect = next((p for p in organization.proyects if p.get_id() == id), None)
 
             if proyect:
                 print(f"ID: {proyect.get_id()}")
@@ -85,5 +85,5 @@ def hub():
         else:
             print("Opción no válida. Intente de nuevo.")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     hub()
