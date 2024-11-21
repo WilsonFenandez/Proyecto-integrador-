@@ -1,5 +1,5 @@
 class Proyect:
-    def __init__(self,id:int,name,type,location,responsible,reductions_emissions,energy_regeneration,status)
+    def __init__(self,id:int,name,type,location,responsible,reductions_emissions,energy_regeneration,status):
      self.__id=id
      self.name=name
      self.type=type
