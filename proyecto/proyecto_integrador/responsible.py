@@ -6,9 +6,9 @@ class Responsible:
       self._email=email
       self.phone=phone
 
-def get_dni(self):
-  return self.__dni
+    def get_dni(self):
+      return self.__dni
 
-def get_email(self):
-  return self._email
+    def get_email(self):
+      return self._email
 

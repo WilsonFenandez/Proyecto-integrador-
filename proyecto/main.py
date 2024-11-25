@@ -2,6 +2,9 @@ from proyecto_integrador.proyect import Proyect
 from proyecto_integrador.organization import Organization
 from proyecto_integrador.responsible import Responsible
 
+def sort_emissions(proyect):
+    return proyect.reductions_emissions
+
 def hub():
     organization = Organization("GreenTech Global", None, [])
     while True:
@@ -55,7 +58,7 @@ def hub():
 
         elif option == "3":
             id = input("ID del proyecto a actualizar: ")
-            proyect = next((p for p in organization.projects if p.get_id() == id), None)
+            proyect = next((p for p in organization.proyects if p.get_id() == id), None)
 
             if proyect:
                 new_status = input("Nuevo estado del proyecto (pendiente, en curso, completado): ")
@@ -64,18 +67,19 @@ def hub():
 
             else:
                 print("Proyecto no encontrado.")
-
+        
         elif option == "4":
-            projects = sorted(organization.projects, key=lambda p: p.reductions_emissions, reverse=True)
+            projects = sorted(organization.proyects, key=sort_emissions, reverse=True)
+            print("Proyectos ordenados por emisiones reducidas:")
             for p in projects:
                 print(f"{p.name} - {p.reductions_emissions} toneladas")
 
         elif option == "5":
-            total_emissions = sum(p.reductions_emissions for p in organization.projects)
+            total_emissions = sum(p.reductions_emissions for p in organization.proyects)
             print(f"Total de emisiones reducidas: {total_emissions} toneladas")
             
         elif option == "6":
-            completed_projects = len([p for p in organization.projects if p.status == "completado"])
+            completed_projects = len([p for p in organization.proyects if p.status == "completado"])
             print(f"Proyectos completados: {completed_projects}")
 
         elif option == "7":
