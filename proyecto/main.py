@@ -69,9 +69,9 @@ def hub():
                 print("Proyecto no encontrado.")
         
         elif option == "4":
-            projects = sorted(organization.proyects, key=sort_emissions, reverse=True)
+            proyects = sorted(organization.proyects, key=sort_emissions, reverse=True)
             print("Proyectos ordenados por emisiones reducidas:")
-            for p in projects:
+            for p in proyects:
                 print(f"{p.name} - {p.reductions_emissions} toneladas")
 
         elif option == "5":
@@ -79,8 +79,8 @@ def hub():
             print(f"Total de emisiones reducidas: {total_emissions} toneladas")
             
         elif option == "6":
-            completed_projects = len([p for p in organization.proyects if p.status == "completado"])
-            print(f"Proyectos completados: {completed_projects}")
+            completed_proyects = len([p for p in organization.proyects if p.status == "completado"])
+            print(f"Proyectos completados: {completed_proyects}")
 
         elif option == "7":
             print("Saliendo del sistema...")
